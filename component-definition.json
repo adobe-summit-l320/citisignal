@@ -40,6 +40,17 @@
               }
             }
           }
+        },
+        {
+          "title": "Section-One",
+          "id": "section-one",
+          "plugins": {
+            "plugins": {
+              "da": {
+                "unsafeHTML": "<div></div>"
+              }
+            }
+          }
         }
       ]
     },

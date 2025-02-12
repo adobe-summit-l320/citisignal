@@ -1,7 +1,7 @@
 [
   {
     "id": "main",
-    "components": ["section"]
+    "components": ["section", "section-one"]
   },
   {
     "id": "section",
@@ -34,6 +34,14 @@
       "commerce-checkout",
       "commerce-order-confirmation",
       "columnsjo"
+    ]
+  },
+  {
+    "id": "section-one",
+    "components": [
+      "text",
+      "image",
+      "title"
     ]
   },
   {

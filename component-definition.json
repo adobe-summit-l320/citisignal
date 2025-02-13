@@ -47,7 +47,7 @@
           "plugins": {
             "plugins": {
               "da": {
-                "unsafeHTML": "<div></div>"
+                "unsafeHTML": "<div class=\"section-one\"><div></div></div>"
               }
             }
           }

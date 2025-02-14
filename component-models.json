@@ -155,9 +155,29 @@
     "id": "section-one",
     "fields": [
       {
-        "component": "text",
+        "component": "multiselect",
+        "valueType": "string",
         "name": "classes",
-        "label": "Classes"
+        "label": "Style",
+        "options": [
+          {
+            "name": "Size",
+            "children": [
+              {
+                "name": "Small1",
+                "value": "small"
+              },
+              {
+                "name": "Medium1",
+                "value": "medium"
+              },
+              {
+                "name": "Large1",
+                "value": "large"
+              }
+            ]
+          }
+        ]
       }
     ]
   },

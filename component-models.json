@@ -155,29 +155,11 @@
     "id": "section-one",
     "fields": [
       {
-        "component": "multiselect",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Size",
-            "children": [
-              {
-                "name": "Small1",
-                "value": "small"
-              },
-              {
-                "name": "Medium1",
-                "value": "medium"
-              },
-              {
-                "name": "Large1",
-                "value": "large"
-              }
-            ]
-          }
-        ]
+        "component": "text",
+        "name": "div:nth-child(1)[class]",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
       }
     ]
   },

@@ -3,6 +3,7 @@ import {
   getConfigValue, getCookie, getHeaders,
 } from './configs.js';
 import { getConsent } from './scripts.js';
+import { fetchPlaceholders } from './aem.js';
 
 /* Common query fragments */
 export const priceFieldsFragment = `fragment priceFields on ProductViewPrice {
@@ -144,12 +145,10 @@ export function renderPrice(product, format, html = (strings, ...values) => stri
 
 /* PDP specific functionality */
 
-export function getSkuFromUrl() {
-  // const path = window.location.pathname;
-  // const result = path.match(/\/products\/[\w|-]+\/([\w|-]+)$/);
-  // return result?.[1];
-
+export async function getSkuFromUrl() {
+  const placeholders = await fetchPlaceholders();
   const path = window.location.pathname;
+  const defaultProduct = placeholders?.PDP?.DefaultProduct;
   let result;
 
   if (path.startsWith('/experiments/')) {
@@ -161,7 +160,7 @@ export function getSkuFromUrl() {
     result = pathStr?.[1];
   }
   if (path.startsWith('/products/default')) {
-    result = 'samsung-galaxy-S22-ultra';
+    result = defaultProduct;
   }
   if (path.startsWith('/products/plan/')) {
     const pathStr = path.match(/\/products\/plan\/(.+)$/);

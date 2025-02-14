@@ -609,18 +609,46 @@ async function loadBlock(block) {
 }
 
 function addSectionMetadata(section) {
-  const colors = ['background-color', 'text-color']; // Add to this list for other custom section metadata parameters
+  if (!section) return;
 
-  colors.forEach((color) => {
-    const dataAttr = section?.getAttribute(`data-${color}`);
-    const block = section?.querySelector('div.block');
+  const metadataMap = {
+    'background-color': 'background',
+    'text-color': 'color',
+    'min-height': 'minHeight',
+    'overlay-background-color': 'background',
+  };
 
-    if (dataAttr && block) {
-      if (color === 'background-color') {
-        block.style.background = dataAttr;
-      } else if (color === 'text-color') {
-        block.style.color = dataAttr;
+  const blocks = section.querySelectorAll('div.block');
+  if (!blocks.length) return;
+
+  // Process each block inside the section
+  blocks.forEach((block) => {
+    const classList = [];
+
+    [...section.attributes].forEach(({ name, value }) => {
+      if (name.startsWith('data-') && name !== 'data-section-status' && name !== 'data-date') {
+        const key = name.replace(/^data-/, ''); // Remove "data-" prefix
+
+        if (metadataMap[key]) {
+          // Apply styles if the key exists in metadataMap
+          block.style[metadataMap[key]] = value;
+        } else {
+          // Convert unknown data-* attributes into class names
+          classList.push(`${key}-${value}`);
+        }
       }
+
+      // overlay
+      if (name === 'data-overlay-background-color') {
+        const key = name.replace(/^data-/, ''); // Remove "data-" prefix
+        const overlayElement = block.querySelector('div:nth-child(2) > div');
+        overlayElement.style[metadataMap[key]] = value;
+      }
+    });
+
+    // Add the generated classes to the block
+    if (classList.length) {
+      block.classList.add(...classList);
     }
   });
 }
@@ -645,12 +673,25 @@ function decorateBlock(block) {
   }
 }
 
+function decorateGridLayout(block) {
+  const div = document.createElement('div');
+  div.classList.add('grid-wrapper');
+  [...block.children].forEach((el) => {
+    const isDefaultContentWrapper = el.matches('.default-content-wrapper');
+    if (!isDefaultContentWrapper) {
+      div.append(el);
+    }
+  });
+  block.append(div);
+}
+
 /**
  * Decorates all blocks in a container element.
  * @param {Element} main The container element
  */
 function decorateBlocks(main) {
   main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
+  main.querySelectorAll('div.section.grid-row, div.section.grid-column').forEach(decorateGridLayout);
 }
 
 /**

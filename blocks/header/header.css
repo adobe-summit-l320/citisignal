@@ -585,7 +585,7 @@ header .nav-auth-modal-wrapper.not-authenticated {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(136, 33, 244, 0.55);
+  background: rgba(136, 33, 244, 0.97);
 }
 
 header .nav-auth-modal-wrapper.not-authenticated .nav-tools-panel {

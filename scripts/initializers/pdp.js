@@ -34,16 +34,31 @@ await initializeDropin(async () => {
     'Content-Type': 'application/json',
   });
 
-  const sku = getSkuFromUrl();
+  let sku = await getSkuFromUrl();
   const optionsUIDs = getOptionsUIDsFromUrl();
+  const placeholders = await fetchPlaceholders();
 
-  const [product, labels] = await Promise.all([
+  let product;
+  let labels;
+
+  [product, labels] = await Promise.all([
     fetchProductData(sku, { optionsUIDs, skipTransform: true }).then(preloadImageMiddleware),
-    fetchPlaceholders(),
+    placeholders,
   ]);
 
   if (!product?.sku) {
-    return loadErrorPage();
+    try {
+      // set default pdp product
+      const defaultProduct = placeholders?.PDP?.DefaultProduct;
+      sku = defaultProduct;
+
+      [product, labels] = await Promise.all([
+        fetchProductData(sku, { optionsUIDs, skipTransform: true }).then(preloadImageMiddleware),
+        placeholders,
+      ]);
+    } catch {
+      return loadErrorPage();
+    }
   }
 
   const langDefinitions = {

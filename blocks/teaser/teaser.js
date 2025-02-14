@@ -1,6 +1,8 @@
 export default function decorate(block) {
+  const wrapperDiv = document.createElement('div');
+  wrapperDiv.classList.add('wrapper');
+
   // setup image teaser
-  block.querySelector('p > a')?.classList.add('teaser-link');
   [...block.children].forEach((row) => {
     const pic = row.querySelector('picture');
     if (pic) {
@@ -10,5 +12,7 @@ export default function decorate(block) {
         picWrapper.classList.add('teaser-img-col');
       }
     }
+    wrapperDiv.append(row);
   });
+  block.append(wrapperDiv);
 }

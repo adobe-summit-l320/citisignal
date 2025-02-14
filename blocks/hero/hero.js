@@ -4,11 +4,10 @@
  */
 
 export default async function decorate(block) {
-  // Target the third child div to add button-primary class
-  const div = block.children[2];
+  const [_, contentOne, contentTwo] = block.children;
 
-  if (div) {
-    const btnContainer = div.querySelector('.button-container');
-    btnContainer.querySelector('a').classList.add('button-primary');
-  }
+  contentOne?.classList.add('overlay');
+  contentTwo?.classList.add('overlay');
+
+  contentTwo?.querySelector('.button-container a')?.classList.add('button-primary');
 }

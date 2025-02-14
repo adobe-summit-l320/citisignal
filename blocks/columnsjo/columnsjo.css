@@ -39,21 +39,6 @@
   }
 }
 
-/* enrichment columnsjo block */
-.pdp-enrichment .default-content-wrapper h5 {
-  content: unset;
-  margin-bottom: 2.5rem;
-  font-weight: 600;
-}
-
-.pdp-enrichment .default-content-wrapper h5::after {
-  content: unset;
-}
-
-.pdp-enrichment .columnsjo-wrapper {
-  margin-bottom: 3rem;
-}
-
 /* grid */
 .columnsjo.grid {
   display: flex;

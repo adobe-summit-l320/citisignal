@@ -225,7 +225,7 @@
       },
       {
         "component": "text",
-        "name": "div:nth-child(2)>div:nth-child(1)>p:nth-child(1)>h1:nth-child(1)",
+        "name": "div:nth-child(1) > div:nth-child(1) > p:nth-child(1) > h1:nth-child(1)",
         "value": "",
         "label": "Title",
         "valueType": "string"

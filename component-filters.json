@@ -1,7 +1,7 @@
 [
   {
     "id": "main",
-    "components": ["section", "section-one"]
+    "components": ["section", "sectiondingbat"]
   },
   {
     "id": "section",
@@ -37,7 +37,7 @@
     ]
   },
   {
-    "id": "section-one",
+    "id": "sectiondingbat",
     "components": [
       "text",
       "image"

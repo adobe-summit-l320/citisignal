@@ -43,10 +43,10 @@
         },
         {
           "title": "Dingbat1",
-          "id": "section-one",
+          "id": "sectiondingbat",
           "plugins": {
               "da": {
-                "unsafeHTML": "<div class=\"section-one test\"></div>"
+                "unsafeHTML": "<div class=\"sectiondingbat test\"></div>"
               }
           }
         }

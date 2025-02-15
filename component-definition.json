@@ -45,11 +45,9 @@
           "title": "Section-One",
           "id": "section-one",
           "plugins": {
-            "plugins": {
               "da": {
                 "unsafeHTML": "<div class=\"section-one\"><div class=\"test\"></div></div>"
               }
-            }
           }
         }
       ]

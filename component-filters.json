@@ -40,8 +40,7 @@
     "id": "section-one",
     "components": [
       "text",
-      "image",
-      "title"
+      "image"
     ]
   },
   {

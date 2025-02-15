@@ -158,7 +158,7 @@
         "component": "text",
         "name": "div:nth-child(1)[class]",
         "value": "",
-        "label": "Title",
+        "label": "Class-One",
         "valueType": "string"
       }
     ]

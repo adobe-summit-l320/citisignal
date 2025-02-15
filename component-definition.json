@@ -42,11 +42,11 @@
           }
         },
         {
-          "title": "Dingbat",
+          "title": "Dingbat1",
           "id": "section-one",
           "plugins": {
               "da": {
-                "unsafeHTML": "<div class=\"section-one\"><div class=\"test\"></div></div>"
+                "unsafeHTML": "<div class=\"section-one test\"></div>"
               }
           }
         }

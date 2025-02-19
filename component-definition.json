@@ -603,7 +603,7 @@
           "id": "enrichment",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div><div><p class=\"joykill\">type</p></div><div><p>product</p></div></div>"
+              "unsafeHTML": "<div class=\"enrichment\"><div><div><p class=\"joykill\">type</p><div class=\"what-one\"></div></div><div><p>product</p></div></div></div>"
             }
           }
         },

@@ -429,7 +429,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "type",
+        "name": "type-ue",
         "label": "TypeUE",
         "value": ""
       },

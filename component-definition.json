@@ -602,6 +602,15 @@
           "title": "Enrichment",
           "id": "enrichment",
           "plugins": {
+            "da": {
+              "unsafeHTML": "<div><div><p>type</p></div><div><p>product</p></div></div>"
+            }
+          }
+        },
+        {
+          "title": "EnrichmentUE",
+          "id": "enrichment-ue",
+          "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",

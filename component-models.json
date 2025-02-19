@@ -422,8 +422,15 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "type",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)",
         "label": "Type",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "type",
+        "label": "TypeUE",
         "value": ""
       },
       {

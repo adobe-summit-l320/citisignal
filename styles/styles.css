@@ -18,6 +18,7 @@
   --black-brand-500: #454545;
   --button-radius: 12px;
   --border-color: #eaeaea;
+  --loyalty-promotion: linear-gradient(360deg, #FDAB45 0.81%, #8821F4 100%);
 }
 
 :root,
@@ -196,6 +197,10 @@ body:not(.appear) {
   visibility: hidden;
 }
 
+body.featured-pdp {
+  background: linear-gradient(3deg, #DBBCFC -6.01%, #FFF 99.66%);
+}
+
 /* main .block {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -209,6 +214,10 @@ main {
   margin-top: 170px;
   flex: 1;
 }
+
+/* main.featured-pdp {
+  background: linear-gradient(3deg, #DBBCFC -6.01%, #FFF 99.66%);
+} */
 
 @media (width >= 768px) {
   main {
@@ -374,7 +383,7 @@ main pre {
   white-space: pre;
 }
 
-.block a:any-link.button {
+a:any-link.button {
   width: fit-content;
   padding: 8px;
   padding-inline: 30px;
@@ -384,8 +393,15 @@ main pre {
   font-weight: 400;
 }
 
-.block a:any-link.button:hover {
+a:any-link.button:hover {
   text-decoration: solid underline var(--color-brand-700);
+}
+
+a:any-link.button:not(.primary,.secondary) {
+  display: block;
+  padding: 1rem 0;
+  background-color: unset;
+  color: inherit;
 }
 
 /* links */
@@ -422,12 +438,12 @@ button {
   font: var(--type-base-font-family);
 }
 
-a.button:not(header a.button),
 button.button-primary,
+a.button.primary,
 a.button-primary,
 a.button.error-button-home {
   display: block;
-  background-color: var(--color-brand-500);
+  background-color: var(--primary-color);
   font-size: var(--body-font-size-md);
   font-weight: 600;
   color: var(--color-neutral-50);
@@ -444,23 +460,28 @@ a.button.error-button-home {
 }
 
 button.button-primary:hover,
+a.button.primary:hover,
 a.button-primary:hover {
   background-color: var(--color-brand-600);
+  color: #fff;
+  text-decoration: none;
 }
 
 button.button-primary:active,
+a.button.primary:active,
 a.button-primary:active {
   background-color: var(--color-brand-700);
 }
 
 button.button-secondary,
+a.button.secondary,
 a.button-secondary {
   display: block;
-  background-color: var(--color-black-100);
+  background-color: #000;
   font-size: var(--body-font-size-md);
   font-weight: 600;
-  color: var(--color-neutral-50);
-  padding: 8px 24px;
+  color: #fff;
+  padding: 8px 30px;
   width: fit-content;
   height: auto;
   letter-spacing: 0.08em;
@@ -469,22 +490,7 @@ a.button-secondary {
   text-align: center;
   margin: 15px 0;
   text-transform: uppercase;
-}
-
-.button-tertiary {
-  font-size: var(--body-font-size-md);
-  font-weight: 600;
-  color: var(--color-black-100);
-  padding: 8px 24px;
-  width: fit-content;
-  height: auto;
-  letter-spacing: 0.08em;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-align: center;
-  margin: 15px 0;
-  text-transform: uppercase;
-  background: none;
+  border-radius: 24px;
 }
 
 a.button.disabled,
@@ -494,21 +500,11 @@ button:not([class^='elsie-']):disabled:hover {
   cursor: unset;
 }
 
-main a.button.secondary,
-button.button.secondary {
-  background-color: unset;
-  border: var(--shape-border-width-3) solid currentcolor;
-  color: var(--color-brand-500);
-}
-
 a.button.secondary:hover,
 button:not([class^='elsie-']).secondary:hover {
-  color: var(--color-brand-600);
-}
-
-.button-tertiary:hover {
-  color: var(--color-neutral-700);
-  cursor: pointer;
+  background-color: var(--black-brand-500);
+  color: #fff;
+  text-decoration: none;
 }
 
 main input:hover {
@@ -826,6 +822,12 @@ main .section.grid-column .grid-wrapper > div {
   background: var(--color-neutral-500);
   color: var(--color-neutral-50);
 }
+
+/* .dropin-design .dropin-button:disabled {
+  background: transparent;
+  color: var(--color-neutral-50);
+  opacity: 0.35;
+} */
 
 /* Hide minicart SKU */
 .dropin-design .dropin-cart-item__sku {

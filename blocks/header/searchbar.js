@@ -28,7 +28,7 @@ import { getConfigValue } from '../../scripts/configs.js';
     context: {
       customerGroup: await getConfigValue('commerce.headers.cs.Magento-Customer-Group'),
     },
-    route: ({ sku, urlKey }) => `/products/${urlKey}/${sku}`,
+    route: ({ sku }) => `/products/${sku}`,
     searchRoute: {
       route: '/search',
       query: 'q',

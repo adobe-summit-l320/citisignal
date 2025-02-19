@@ -52,12 +52,15 @@ export default async function decorate(block) {
       customerGroup: await getConfigValue('commerce.headers.cs.Magento-Customer-Group'),
     },
     route: ({ sku }) => {
+      // SUMMIT ONLY
+      const iphone13SKU = 'apple-iphone-13/iphone-13';
+      if (sku === iphone13SKU) {
+        return '/drafts/tlee/iphone-13';
+      }
+
+      // default
       const base = urlpath === 'plans' ? '/products/plan/' : '/products/';
       return `${base}${sku}`;
-
-      // const a = new URL(window.location.origin);
-      // a.pathname = `/products/${urlKey}/${sku}`;
-      // return a.toString();
     },
   };
 

@@ -298,6 +298,7 @@ header nav .nav-sections ul > li > p > a:hover {
   header nav .nav-sections ul {
     display: flex;
     margin: 0;
+    align-items: center;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {

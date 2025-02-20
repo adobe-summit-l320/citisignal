@@ -422,7 +422,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(1)>div:nth-child(1)>div:nth-child(2)[class]",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)",
         "label": "Type",
         "value": ""
       },

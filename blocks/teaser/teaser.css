@@ -13,16 +13,19 @@
   flex-direction: row-reverse;
 }
 
-.teaser .wrapper {
+.teaser .wrapper,
+.teaser a.link-wrapper {
   display: flex;
   width: 100%;
   max-width: 1238px;
   margin: 0 auto;
+  color: inherit;
 }
 
 .teaser-img-col {
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   flex: 1 1 43%;
   border-radius: 20px;
@@ -48,7 +51,8 @@
   border-bottom-left-radius: 0;
 }
 
-.teaser > div > div:not(.teaser-img-col) {
+.teaser > div > div:not(.teaser-img-col),
+.teaser > a.link-wrapper > div:not(.teaser-img-col) {
   flex: 1 1 57%;
   display: flex;
   flex-direction: column;
@@ -57,19 +61,14 @@
   border-radius: inherit;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-
-.teaser > div > div:not(.teaser-img-col) {
   box-sizing: border-box;
   padding: 3rem 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
   height: 100%;
 }
 
-.teaser > div > div:not(.teaser-img-col):only-child {
+.teaser > div > div:not(.teaser-img-col):only-child,
+.teaser > a > div:not(.teaser-img-col):only-child {
   text-align: center;
 }
 
@@ -77,7 +76,8 @@
   color: #000;
 }
 
-.teaser > div > div:not(.teaser-img-col) h3 {
+.teaser > div > div:not(.teaser-img-col) h3,
+.teaser > a.link-wrapper > div:not(.teaser-img-col) h3 {
   font-size: 28px;
   font-style: normal;
   font-weight: 600;
@@ -99,7 +99,8 @@
   margin: 0;
 }
 
-.teaser > div > div:not(.teaser-img-col) p:not(.button-container) {
+.teaser > div > div:not(.teaser-img-col) p:not(.button-container),
+.teaser > a.link-wrapper > div:not(.teaser-img-col) p:not(.button-container) {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -123,7 +124,8 @@
     flex: unset;
   }
 
-  .teaser > div > div:not(.teaser-img-col) {
+  .teaser > div > div:not(.teaser-img-col),
+  .teaser > a.link-wrapper > div:not(.teaser-img-col){
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -131,7 +133,8 @@
     order: 2;
   }
 
-  .teaser > div > div:not(.teaser-img-col) {
+  .teaser > div > div:not(.teaser-img-col),
+  .teaser > a.link-wrapper > div:not(.teaser-img-col) {
     text-align: center;
     padding: 3rem;
     align-items: center;
@@ -141,7 +144,8 @@
     max-height: 155px;
   }
 
-  .teaser .wrapper {
+  .teaser .wrapper,
+  .teaser a.link-wrapper {
     flex-direction: column;
   }
 }

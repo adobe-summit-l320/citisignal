@@ -17,10 +17,6 @@
 }
 
 /* Block dividers */
-.checkout__block.checkout__heading .dropin-header-container {
-  gap: var(--spacing-xsmall);
-}
-
 .checkout__shipping-form {
   padding-top: var(--spacing-xbig);
   border-top: var(--shape-border-width-3) solid var(--color-neutral-400);
@@ -113,6 +109,27 @@
 /* Cart Summary */
 .checkout__block .cart-cart-summary-list {
   padding: var(--spacing-medium);
+}
+
+.checkout__block .cart-cart-summary-list__heading {
+  row-gap: var(--spacing-xsmall);
+}
+
+.checkout__block .cart-cart-summary-list__heading .dropin-divider {
+  max-width: 88px;
+  width: 100%;
+  border-top: 2px solid var(--primary-color);
+}
+
+/* Order Summary */
+.checkout__block .cart-order-summary .cart-order-summary__heading {
+  row-gap: var(--spacing-xsmall);
+}
+
+.checkout__block .cart-order-summary .cart-order-summary__heading .dropin-divider {
+  max-width: 88px;
+  width: 100%;
+  border-top: 2px solid var(--primary-color);
 }
 
 /* Order Summary Coupon */

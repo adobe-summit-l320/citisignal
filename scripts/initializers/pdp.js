@@ -9,7 +9,6 @@ import {
   setFetchGraphQlHeaders,
   fetchProductData,
 } from '@dropins/storefront-pdp/api.js';
-import { initializeDropin } from './index.js';
 import {
   commerceEndpointWithQueryParams,
   getOptionsUIDsFromUrl,
@@ -24,7 +23,7 @@ export const IMAGES_SIZES = {
   height: 1191,
 };
 
-await initializeDropin(async () => {
+export const initializePdpDropin = async (itemSku, itemOptionsUIDs) => {
   // Set Fetch Endpoint (Service)
   setEndpoint(await commerceEndpointWithQueryParams());
 
@@ -34,8 +33,8 @@ await initializeDropin(async () => {
     'Content-Type': 'application/json',
   });
 
-  let sku = await getSkuFromUrl();
-  const optionsUIDs = getOptionsUIDsFromUrl();
+  let sku = itemSku ?? await getSkuFromUrl();
+  const optionsUIDs = itemOptionsUIDs ?? getOptionsUIDsFromUrl();
   const placeholders = await fetchPlaceholders();
 
   let product;
@@ -82,7 +81,7 @@ await initializeDropin(async () => {
     acdl: true,
     persistURLParams: true,
   });
-})();
+};
 
 async function preloadImageMiddleware(data) {
   const image = data?.images?.[0]?.url?.replace(/^https?:/, '');

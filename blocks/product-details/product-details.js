@@ -26,7 +26,8 @@ import { fetchPlaceholders, readBlockConfig } from '../../scripts/aem.js';
 import initToast from './toast.js';
 
 // Initializers
-import { IMAGES_SIZES } from '../../scripts/initializers/pdp.js';
+import { initializeDropin } from '../../scripts/initializers/index.js';
+import { IMAGES_SIZES, initializePdpDropin } from '../../scripts/initializers/pdp.js';
 import '../../scripts/initializers/cart.js';
 
 export default async function decorate(block) {
@@ -36,6 +37,8 @@ export default async function decorate(block) {
   const control = blockConfig?.control;
   block.innerHTML = '';
 
+  initializeDropin(initializePdpDropin(blockConfig?.sku));
+
   // eslint-disable-next-line no-underscore-dangle
   const product = events._lastEvent?.['pdp/data']?.payload ?? null;
   const labels = await fetchPlaceholders();
@@ -43,8 +46,6 @@ export default async function decorate(block) {
   let fragment;
   // PDP enhancements
   if (isFeatured) {
-    const body = document.querySelector('body');
-    body.classList.add('featured-pdp');
     block.classList.add('featured-pdp');
 
     // change fragment layout
@@ -298,6 +299,11 @@ export default async function decorate(block) {
     },
     { eager: true },
   );
+
+  if (isFeatured) {
+    const body = document.querySelector('body');
+    body.classList.add('featured-pdp');
+  }
 
   return Promise.resolve();
 }

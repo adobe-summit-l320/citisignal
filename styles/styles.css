@@ -201,23 +201,11 @@ body.featured-pdp {
   background: linear-gradient(3deg, #DBBCFC -6.01%, #FFF 99.66%);
 }
 
-/* main .block {
-  margin-top: 30px;
-  margin-bottom: 30px;
-} */
-
-/* header {
-  height: var(--nav-height);
-} */
 
 main {
-  margin-top: 170px;
+  margin-top: 170px !important;
   flex: 1;
 }
-
-/* main.featured-pdp {
-  background: linear-gradient(3deg, #DBBCFC -6.01%, #FFF 99.66%);
-} */
 
 @media (width >= 768px) {
   main {
@@ -227,7 +215,7 @@ main {
 
 @media (width < 768px) {
   main {
-    margin-top: 105px;
+    margin-top: 105px !important;
   }
 }
 
@@ -832,4 +820,73 @@ main .section.grid-column .grid-wrapper > div {
 /* Hide minicart SKU */
 .dropin-design .dropin-cart-item__sku {
   display: none;
+}
+
+/* Drop-in Header */
+.dropin-header-container {
+  row-gap: var(--spacing-xsmall);
+} 
+
+.dropin-header-container .dropin-divider {
+  max-width: 88px;
+  width: 100%;
+  border-top: 2px solid var(--primary-color);
+}
+
+/* Layout: Columns */
+body.columns main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1264px;
+  margin: 0 auto;
+  padding: var(--spacing-large) var(--spacing-small);
+  box-sizing: border-box;
+  gap: var(--grid-4-gutters);
+}
+
+body.columns main > .section {
+  flex: 1;
+  flex-basis: 100%;
+  max-width: unset;
+  margin: unset;
+  padding: unset;
+}
+
+body.columns main > .section > div {
+  max-width: unset;
+  padding: unset;
+}
+
+body.columns main > .section > div:not(:last-child) {
+  margin-bottom: var(--gap, unset);
+}
+
+body.columns main > .section:empty {
+  display: none;
+}
+
+@media (width >= 600px) {
+  body.columns main {
+      padding: var(--spacing-large) var(--spacing-big);
+  }
+}
+
+@media (width >= 900px) {
+  body.columns main {
+    flex-direction: row;
+  }
+
+  body.columns main > .section {
+    flex: 1;
+    flex-basis: var(--column-width, auto);
+  }
+}
+
+/**
+* Reset main element visibility
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden
+*/
+main[hidden] {
+  display: none !important;
 }

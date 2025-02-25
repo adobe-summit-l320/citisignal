@@ -26,11 +26,14 @@ import { fetchPlaceholders } from '../../scripts/aem.js';
 // import initModal from './modal.js';
 
 // Initializers
-import { IMAGES_SIZES } from '../../scripts/initializers/pdp.js';
+import { initializeDropin } from '../../scripts/initializers/index.js';
+import { IMAGES_SIZES, initializePdpDropin } from '../../scripts/initializers/pdp.js';
 import '../../scripts/initializers/cart.js';
 
 export default async function decorate(block) {
   // const blockConfig = readBlockConfig(block);
+
+  initializeDropin(initializePdpDropin());
 
   block.innerHTML = '';
 

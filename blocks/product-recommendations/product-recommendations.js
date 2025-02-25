@@ -93,13 +93,13 @@ function renderItem(unitId, product) {
       }
     } else {
       // Navigate to page for non-simple products
-      window.location.href = `/products/${product.urlKey}/${product.sku}`;
+      window.location.href = `/products/${product.sku}`;
     }
   };
 
   const ctaText = product.__typename === 'SimpleProductView' ? 'Add to Cart' : 'Select Options';
   const item = document.createRange().createContextualFragment(`<div class="product-grid-item">
-    <a href="/products/${product.urlKey}/${product.sku}">
+    <a href="/products/${product.sku}">
       <picture>
         <source type="image/webp" srcset="${image}?width=300&format=webply&optimize=medium" />
         <img loading="lazy" alt="Image of ${product.name}" width="300" height="375" src="${image}?width=300&format=jpg&optimize=medium" />
@@ -164,7 +164,7 @@ const mapProduct = (product, index) => ({
   categories: [],
   weight: 0,
   image: product.images.length > 0 ? product.images[0].url : undefined,
-  url: new URL(`/products/${product.urlKey}/${product.sku}`, window.location.origin).toString(),
+  url: new URL(`/products/${product.sku}`, window.location.origin).toString(),
   queryType: 'primary',
 });
 

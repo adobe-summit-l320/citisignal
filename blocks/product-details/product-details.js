@@ -363,9 +363,9 @@ async function setJsonLdProduct(product) {
       '@type': 'Brand',
       name: brand?.value,
     },
-    url: new URL(`/products/${urlKey}/${sku}`, window.location),
+    url: new URL(`/products/${sku}`, window.location),
     sku,
-    '@id': new URL(`/products/${urlKey}/${sku}`, window.location),
+    '@id': new URL(`/products/${sku}`, window.location),
   };
 
   if (variants.length > 1) {

@@ -38,15 +38,6 @@
               "unsafeHTML": "<div data-background-size=\"\" data-grid-layout=\"\"></div>"
             }
           }
-        },
-        {
-          "title": "Dingbat1",
-          "id": "sectiondingbat",
-          "plugins": {
-              "da": {
-                "unsafeHTML": "<div class=\"sectiondingbat test\" data-background-size=\"\"></div>"
-              }
-          }
         }
       ]
     },

@@ -104,7 +104,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div[data-background-size]",
+        "name": "[data-background-size]",
         "label": "Background Size",
         "value": "",
         "options": [
@@ -237,18 +237,6 @@
     ]
   },
   {
-    "id": "sectiondingbat",
-    "fields": [
-      {
-        "component": "text",
-        "name": "div:nth-child(1)[class]",
-        "value": "",
-        "label": "Class-One",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "hero",
     "fields": [
       {
@@ -270,41 +258,6 @@
   {
     "id": "teaser",
     "fields": [
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "align-right",
-        "label": "Style",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Alignment",
-            "children": [
-              {
-                "name": "Left",
-                "value": "align-left"
-              },
-              {
-                "name": "Right",
-                "value": "align-right"
-              }
-            ]
-          },
-          {
-            "name": "Background",
-            "children": [
-              {
-                "name": "Primary",
-                "value": "bg-primary"
-              },
-              {
-                "name": "Secondary",
-                "value": "bg-secondary"
-              }
-            ]
-          }
-        ]
-      },
       {
         "component": "reference",
         "valueType": "string",

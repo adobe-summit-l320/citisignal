@@ -316,7 +316,7 @@ const Picker = props => {
     const items = [...getCategoriesToDisplay(state.categories), ...Object.values(state.items)];
 
     if (state.error) {
-        return <Provider theme={defaultTheme} height="100%">
+        return <Provider theme={defaultTheme} colorScheme={'light'} height="100%">
             <Flex direction="column" height="100%">
                 <View padding="size-500">
                     {renderErrorState()}
@@ -325,7 +325,7 @@ const Picker = props => {
         </Provider>;
     }
 
-    return <Provider theme={defaultTheme} height="100%">
+    return <Provider theme={defaultTheme} colorScheme={'light'} height="100%">
         <Flex direction="column" height="100%">
             {state.showSettings && <View padding="size-100">
                 <RSPicker label="Configuration"

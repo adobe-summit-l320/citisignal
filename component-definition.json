@@ -612,7 +612,7 @@
           "id": "product-details",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"product-details\" data-control=\"\"><div class=\"product-details-misc\"><div></div></div><div class=\"product-details__wrapper\"><div class=\"product-details__alert\"></div><div class=\"product-details__left-column\"></div><div class=\"product-details__right-column\"></div></div></div>"
+              "unsafeHTML": "<div class=\"product-details\" data-control=\"\"><div class=\"product-details-misc\"><div>carousel-layout</div><div></div><div>control</div><div></div><div>featured</div><div></div><div>sku</div><div></div></div><div class=\"product-details__wrapper\"><div class=\"product-details__alert\"></div><div class=\"product-details__left-column\"></div><div class=\"product-details__right-column\"></div></div></div>"
             }
           }
         },

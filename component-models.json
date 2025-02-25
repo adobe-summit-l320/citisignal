@@ -464,7 +464,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div:nth-child(1)>div:nth-child(1)",
+        "name": "div:nth-child(1)>div:nth-child(2)",
         "label": "Carousel Layout",
         "value": "",
         "options": [
@@ -481,7 +481,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div[data-control]",
+        "name": "div:nth-child(1)>div:nth-child(4)",
         "label": "Control",
         "value": "",
         "options": [
@@ -502,7 +502,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "featured",
+        "name": "div:nth-child(1)>div:nth-child(6)",
         "label": "Featured",
         "value": "",
         "options": [
@@ -519,7 +519,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "sku",
+        "name": "div:nth-child(1)>div:nth-child(8)",
         "label": "SKU",
         "value": ""
       }

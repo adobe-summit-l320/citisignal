@@ -35,7 +35,7 @@
           "id": "section",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"section custom-da\"><div class=\"inner-section\" data-background-size=\"\" data-grid-layout=\"\"></div></div>"
+              "unsafeHTML": "<div class=\"section custom-da\"><div data-background-size=\"\" data-grid-layout=\"\"></div></div>"
             }
           }
         },

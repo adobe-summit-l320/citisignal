@@ -34,10 +34,8 @@
           "title": "Section",
           "id": "section",
           "plugins": {
-            "plugins": {
-              "da": {
-                "unsafeHTML": "<div></div>"
-              }
+            "da": {
+              "unsafeHTML": "<div></div>"
             }
           }
         },

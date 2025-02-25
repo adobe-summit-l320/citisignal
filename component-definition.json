@@ -35,7 +35,7 @@
           "id": "section",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div><div data-background-size=\"\"></div></div>"
+              "unsafeHTML": "<div class=\"section-ue\"><div data-background-size=\"\"></div></div>"
             }
           }
         },
@@ -68,7 +68,7 @@
           "id": "teaser",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"teaser-wrapper\"><div class=\"teaser\"><div class=\"wrapper\"><div class=\"teaser-img-col\"><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div></div></div></div>"
+              "unsafeHTML": "<div class=\"teaser\"><div class=\"wrapper\"><div class=\"teaser-img-col\"><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div></div></div>"
             }  
           }
         },

@@ -68,7 +68,7 @@
           "id": "teaser",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"teaser\"><div class=\"wrapper\"><div class=\"teaser-img-col\"><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div></div></div>"
+              "unsafeHTML": "<div class=\"teaser\"><div class=\"wrapper\"><div class=\"teaser-img-col\"><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div><div></div></div></div>"
             }  
           }
         },

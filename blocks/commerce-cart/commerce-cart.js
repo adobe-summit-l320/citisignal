@@ -86,7 +86,6 @@ export default async function decorate(block) {
           // Prepend Product Attributes
           const productAttributes = ctx.item?.productAttributes;
           productAttributes?.forEach((attr) => {
-            console.log('attr code', attr.code);
             if (showEstimatedDelivery === 'true' && attr.code === 'Estimated Delivery') {
               if (attr.selected_options) {
                 const selectedOptions = attr.selected_options

@@ -85,67 +85,27 @@
     "id": "section",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "style",
-        "value": "",
-        "label": "Style",
+        "component": "select",
         "valueType": "string",
+        "name": "div:nth-child(1)[data-background-size]",
+        "label": "Background Size",
+        "value": "",
         "options": [
           {
-            "name": "Nav",
-            "children": [
-              {
-                "name": "Brand Logo",
-                "value": "brand-logo"
-              },
-              {
-                "name": "Site Links",
-                "value": "site-links"
-              },
-              {
-                "name": "Social Media",
-                "value": "social-media"
-              },
-              {
-                "name": "PDP Enrichment",
-                "value": "pdp-enrichment"
-              }
-            ]
+            "name": "Cover",
+            "value": "cover"
           },
           {
-            "name": "Alignment",
-            "children": [
-              {
-                "name": "Center",
-                "value": "align-center"
-              },
-              {
-                "name": "Right",
-                "value": "align-right"
-              }
-            ]
+            "name": "Contain",
+            "value": "contain"
           },
           {
-            "name": "Background",
-            "children": [
-              {
-                "name": "Primary",
-                "value": "bg-primary"
-              },
-              {
-                "name": "Secondary",
-                "value": "bg-secondary"
-              }
-            ]
+            "name": "Fill",
+            "value": "fill"
           },
           {
-            "name": "Width",
-            "children": [
-              {
-                "name": "Full",
-                "value": "full-width"
-              }
-            ]
+            "name": "Auto",
+            "value": "auto"
           }
         ]
       }
@@ -172,13 +132,6 @@
         "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
         "label": "Image",
         "multi": false
-      },
-      {
-        "component": "text",
-        "name": "div:nth-child(1)>div:nth-child(1)>h1:nth-child(2)",
-        "value": "",
-        "label": "Title",
-        "valueType": "string"
       },
       {
         "component": "richtext",

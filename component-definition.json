@@ -35,7 +35,7 @@
           "id": "section",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"section\"><div data-background-size=\"\" data-grid-layout=\"\"></div></div>"
+              "unsafeHTML": "<div class=\"section custom-da\"><div class=\"inner-section\" data-background-size=\"\" data-grid-layout=\"\"></div></div>"
             }
           }
         },
@@ -44,7 +44,7 @@
           "id": "sectiondingbat",
           "plugins": {
               "da": {
-                "unsafeHTML": "<div class=\"sectiondingbat test\"></div>"
+                "unsafeHTML": "<div class=\"sectiondingbat test\" data-background-size=\"\"></div>"
               }
           }
         }

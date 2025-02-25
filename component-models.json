@@ -87,7 +87,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div:nth-child(1)[data-grid-layout]",
+        "name": "div:nth-child(1)[grid-layout]",
         "label": "Grid Layout",
         "value": "",
         "options": [
@@ -146,6 +146,76 @@
         "value": "",
         "label": "Text Color",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "div:nth-child(1)[data-overlay-display]",
+        "label": "Overlay (hero-banner) Display",
+        "value": "",
+        "options": [
+          {
+            "name": "Always",
+            "value": "always"
+          },
+          {
+            "name": "On Hover",
+            "value": "on-hover"
+          },
+          {
+            "name": "Never",
+            "value": "never"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)[data-overlay-background-color]",
+        "value": "",
+        "label": "Overlay (hero-banner) Background Color",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "div:nth-child(1)[data-overlay-alignment-vertical]",
+        "label": "Overlay (hero-banner) Alignment Vertical",
+        "value": "",
+        "options": [
+          {
+            "name": "Top",
+            "value": "top"
+          },
+          {
+            "name": "Middle",
+            "value": "middle"
+          },
+          {
+            "name": "Bottom",
+            "value": "bottom"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "div:nth-child(1)[data-overlay-alignment-horizontal]",
+        "label": "Overlay (hero-banner) Alignment Horizontal",
+        "value": "",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Middle",
+            "value": "middle"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
       },
       {
         "component": "select",

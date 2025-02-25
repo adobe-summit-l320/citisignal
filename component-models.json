@@ -481,7 +481,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "[data-control]",
+        "name": "div[data-control]",
         "label": "Control",
         "value": "",
         "options": [

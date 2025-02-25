@@ -612,7 +612,7 @@
           "id": "product-details",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"product-details\" data-control=\"\"><div class=\"product-details__wrapper\" data-carousel-layout=\"\"><div class=\"product-details__alert\"></div><div class=\"product-details__left-column\"></div><div class=\"product-details__right-column\"></div></div></div>"
+              "unsafeHTML": "<div class=\"product-details\" data-control=\"\"><div class=\"product-details-misc\" data-carousel-layout=\"\"></div><div class=\"product-details__wrapper\"><div class=\"product-details__alert\"></div><div class=\"product-details__left-column\"></div><div class=\"product-details__right-column\"></div></div></div>"
             }
           }
         },

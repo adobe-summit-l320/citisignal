@@ -8,6 +8,6 @@ import '../../scripts/initializers/order.js';
 
 export default async function decorate(block) {
   await orderRenderer.render(OrderProductList, {
-    routeProductDetails: (product) => `/products/${product.product.sku}`,
+    routeProductDetails: (product) => `/products/${product.productUrlKey}/${product.product.sku}`,
   })(block);
 }

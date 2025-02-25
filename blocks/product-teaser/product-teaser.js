@@ -94,7 +94,7 @@ function renderImage(image, size = 250) {
 
 function renderProduct(product, config, block) {
   const {
-    name, sku, price, priceRange, addToCartAllowed, __typename,
+    name, urlKey, sku, price, priceRange, addToCartAllowed, __typename,
   } = product;
 
   const currency = price?.final?.amount?.currency || priceRange?.minimum?.final?.amount?.currency;
@@ -111,7 +111,7 @@ function renderProduct(product, config, block) {
       <h1>${name}</h1>
       <div class="price">${renderPrice(product, priceFormatter.format)}</div>
       <div class="actions">
-        ${config['details-button'] ? `<a href="/products/${sku}" class="button primary">Details</a>` : ''}
+        ${config['details-button'] ? `<a href="/products/${urlKey}/${sku}" class="button primary">Details</a>` : ''}
         ${config['cart-button'] && addToCartAllowed && __typename === 'SimpleProductView' ? '<button class="add-to-cart secondary">Add to Cart</button>' : ''}
       </div>
     </div>

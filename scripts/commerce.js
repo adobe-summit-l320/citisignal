@@ -288,7 +288,7 @@ export function mapProductAcdl(product) {
       specialPrice,
       currencyCode,
     },
-    canonicalUrl: new URL(`/products/${product.sku}`, window.location.origin).toString(),
+    canonicalUrl: new URL(`/products/${product.urlKey}/${product.sku}`, window.location.origin).toString(),
     mainImageUrl: product?.images?.[0]?.url,
   };
 }

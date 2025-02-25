@@ -51,7 +51,7 @@ export default async function decorate(block) {
     context: {
       customerGroup: await getConfigValue('commerce.headers.cs.Magento-Customer-Group'),
     },
-    route: ({ sku }) => {
+    route: ({ sku, urlKey }) => {
       // SUMMIT ONLY
       const iphone13SKU = 'apple-iphone-13/iphone-13';
       if (sku === iphone13SKU) {
@@ -59,7 +59,7 @@ export default async function decorate(block) {
       }
 
       // default
-      const base = urlpath === 'plans' ? '/products/plan/' : '/products/';
+      const base = urlpath === 'plans' ? '/products/plan/' : `/products/${urlKey}/`;
       return `${base}${sku}`;
     },
   };

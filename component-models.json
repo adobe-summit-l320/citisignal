@@ -464,7 +464,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "carousel-layout",
+        "name": "div:nth-child(1)>div:nth-child(1)[data-carousel-layout]",
         "label": "Carousel Layout",
         "value": "",
         "options": [

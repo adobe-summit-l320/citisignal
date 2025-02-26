@@ -23,7 +23,6 @@
         "en": "Experimentation"
       },
       "environments": ["preview"],
-      "includePaths": ["**.docx**"],
       "event": "aem-experimentation-sidekick"
     }
   ]

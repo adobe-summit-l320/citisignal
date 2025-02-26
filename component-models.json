@@ -128,7 +128,7 @@
       },
       {
         "component": "text",
-        "name": "div:nth-child(1)[data-background-color]",
+        "name": "div.placeholder[data-background-color]",
         "value": "",
         "label": "Background Color",
         "valueType": "string"

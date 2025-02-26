@@ -104,7 +104,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div:nth-child(1)>div:nth-child(2)",
+        "name": "div[data-background-size]",
         "label": "Background Size",
         "value": "",
         "options": [

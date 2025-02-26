@@ -60,9 +60,9 @@ import ShippingStatus from '@dropins/storefront-order/containers/ShippingStatus.
 import { render as OrderProvider } from '@dropins/storefront-order/render.js';
 
 // Payment Services Dropin
-import { PaymentMethodCode } from '@dropins/storefront-payment-services/api.js';
-import CreditCard from '@dropins/storefront-payment-services/containers/CreditCard.js';
-import { render as PaymentServices } from '@dropins/storefront-payment-services/render.js';
+// import { PaymentMethodCode } from '@dropins/storefront-payment-services/api.js';
+// import CreditCard from '@dropins/storefront-payment-services/containers/CreditCard.js';
+// import { render as PaymentServices } from '@dropins/storefront-payment-services/render.js';
 import { getConfigValue } from '../../scripts/configs.js';
 import { getUserTokenCookie } from '../../scripts/initializers/index.js';
 
@@ -310,34 +310,34 @@ export default async function decorate(block) {
 
     CheckoutProvider.render(PaymentMethods, {
       slots: {
-        Methods: {
-          [PaymentMethodCode.CREDIT_CARD]: {
-            render: (ctx) => {
-              const $content = document.createElement('div');
+        // Methods: {
+        //   [PaymentMethodCode.CREDIT_CARD]: {
+        //     render: (ctx) => {
+        //       const $content = document.createElement('div');
 
-              PaymentServices.render(CreditCard, {
-                apiUrl: commerceCoreEndpoint,
-                getCustomerToken: getUserTokenCookie,
-                getCartId: () => ctx.cartId,
-                creditCardFormRef,
-              })($content);
+        //       PaymentServices.render(CreditCard, {
+        //         apiUrl: commerceCoreEndpoint,
+        //         getCustomerToken: getUserTokenCookie,
+        //         getCartId: () => ctx.cartId,
+        //         creditCardFormRef,
+        //       })($content);
 
-              ctx.replaceHTML($content);
-            },
-          },
-          [PaymentMethodCode.SMART_BUTTONS]: {
-            enabled: false,
-          },
-          [PaymentMethodCode.APPLE_PAY]: {
-            enabled: false,
-          },
-          [PaymentMethodCode.GOOGLE_PAY]: {
-            enabled: false,
-          },
-          [PaymentMethodCode.VAULT]: {
-            enabled: false,
-          },
-        },
+        //       ctx.replaceHTML($content);
+        //     },
+        //   },
+        //   [PaymentMethodCode.SMART_BUTTONS]: {
+        //     enabled: false,
+        //   },
+        //   [PaymentMethodCode.APPLE_PAY]: {
+        //     enabled: false,
+        //   },
+        //   [PaymentMethodCode.GOOGLE_PAY]: {
+        //     enabled: false,
+        //   },
+        //   [PaymentMethodCode.VAULT]: {
+        //     enabled: false,
+        //   },
+        // },
       },
     })($paymentMethods),
 
@@ -441,18 +441,18 @@ export default async function decorate(block) {
         await displayOverlaySpinner();
         try {
           // Payment Services credit card
-          if (code === PaymentMethodCode.CREDIT_CARD) {
-            if (!creditCardFormRef.current) {
-              console.error('Credit card form not rendered.');
-              return;
-            }
-            if (!creditCardFormRef.current.validate()) {
-              // Credit card form invalid; abort order placement
-              return;
-            }
-            // Submit Payment Services credit card form
-            await creditCardFormRef.current.submit();
-          }
+          // if (code === PaymentMethodCode.CREDIT_CARD) {
+          //   if (!creditCardFormRef.current) {
+          //     console.error('Credit card form not rendered.');
+          //     return;
+          //   }
+          //   if (!creditCardFormRef.current.validate()) {
+          //     // Credit card form invalid; abort order placement
+          //     return;
+          //   }
+          //   // Submit Payment Services credit card form
+          //   await creditCardFormRef.current.submit();
+          // }
           // Place order
           await orderApi.placeOrder(cartId);
         } catch (error) {

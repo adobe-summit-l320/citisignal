@@ -411,6 +411,7 @@ async function loadLazy(doc) {
 
   // Load scheduling sidekick extension
   import('./scheduling/scheduling.js');
+  import('../tools/sidekick/aem-experimentation.js');
 }
 
 /**

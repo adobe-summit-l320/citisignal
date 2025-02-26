@@ -87,7 +87,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "div:nth-child(1)[data-grid-layout]",
+        "name": "div[data-grid-layout]",
         "label": "Grid Layout",
         "value": "",
         "options": [
@@ -104,7 +104,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "[data-background-size]",
+        "name": "div[data-background-size]",
         "label": "Background Size",
         "value": "",
         "options": [

@@ -23,7 +23,7 @@ import {
   View,
   IllustratedMessage,
 } from '@adobe/react-spectrum';
-import FolderOutline from '@spectrum-icons/workflow/FolderOutline';
+import Folder from '@spectrum-icons/illustrations/Folder';
 import NotFound from '@spectrum-icons/illustrations/NotFound';
 import Checkmark from "@spectrum-icons/workflow/Checkmark";
 import Error from '@spectrum-icons/illustrations/Error';
@@ -187,10 +187,8 @@ const Picker = props => {
         {item => {
           if (item.title) {
             return <Item key={'category:' + item.key} textValue={item.title}>
-              <Flex width={'100%'} gap={"size-85"} alignItems={"center"}>
-                <FolderOutline/>
-                <Text>{item.title}</Text>
-              </Flex>
+              <Folder/>
+              <Text>{item.title}</Text>
             </Item>
           }
 

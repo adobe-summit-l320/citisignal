@@ -325,6 +325,8 @@ const Picker = props => {
         </Provider>;
     }
 
+    console.log(items);
+
     return <Provider theme={defaultTheme} colorScheme={'light'} height="100%">
         <Flex direction="column" height="100%">
             {state.showSettings && <View padding="size-100">

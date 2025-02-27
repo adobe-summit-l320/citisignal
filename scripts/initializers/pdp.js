@@ -40,7 +40,7 @@ await initializeDropin(async () => {
   if (!sku) {
     const block = document.querySelector('.product-details');
     if (block) {
-      sku = readBlockConfig(block);
+      sku = readBlockConfig(block).sku;
     }
   }
 

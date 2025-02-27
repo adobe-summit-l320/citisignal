@@ -189,12 +189,8 @@ body {
   flex-direction: column;
 }
 
-/* body.appear {
-  display: block;
-} */
-
 body:not(.appear) {
-  visibility: hidden;
+  display: none;
 }
 
 body.featured-pdp {

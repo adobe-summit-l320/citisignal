@@ -26,8 +26,7 @@ import { fetchPlaceholders, readBlockConfig } from '../../scripts/aem.js';
 import initToast from './toast.js';
 
 // Initializers
-import { initializeDropin } from '../../scripts/initializers/index.js';
-import { IMAGES_SIZES, initializePdpDropin } from '../../scripts/initializers/pdp.js';
+import { IMAGES_SIZES } from '../../scripts/initializers/pdp.js';
 import '../../scripts/initializers/cart.js';
 
 export default async function decorate(block) {
@@ -36,8 +35,6 @@ export default async function decorate(block) {
   const carouselLayout = blockConfig?.['carousel-layout'];
   const control = blockConfig?.control;
   block.innerHTML = '';
-
-  initializeDropin(initializePdpDropin(blockConfig?.sku));
 
   // eslint-disable-next-line no-underscore-dangle
   const product = events._lastEvent?.['pdp/data']?.payload ?? null;

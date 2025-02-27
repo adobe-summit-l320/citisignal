@@ -21,10 +21,11 @@ import {
   Flex,
   Picker as RSPicker,
   View,
-  IllustratedMessage
+  IllustratedMessage,
 } from '@adobe/react-spectrum';
 import Folder from '@spectrum-icons/illustrations/Folder';
 import NotFound from '@spectrum-icons/illustrations/NotFound';
+import Checkmark from "@spectrum-icons/workflow/Checkmark";
 import Error from '@spectrum-icons/illustrations/Error';
 import ExperienceImport from '@spectrum-icons/workflow/ExperienceImport';
 import Settings from '@spectrum-icons/workflow/Settings';
@@ -43,6 +44,7 @@ const Picker = props => {
     loadingState: 'idle',
     showSettings: false,
     error: null,
+    cacheCleared: false,
   });
 
   const writeToEditor = async (key) => {
@@ -59,7 +61,7 @@ const Picker = props => {
     let selected = key.split(':')[1];
     const categoryInitializer = getCategory(selected).initializer;
     if (categoryInitializer && categoryInitializer instanceof Function) {
-      state.selectedCategory = selected;
+      setState((state) => ({ ...state, loadingState: 'loading', selectedCategory: selected, items: [] }));
       categoryInitializer(state.selectedEnvironment)
         .then(response => {
           setState(state => ({
@@ -69,11 +71,6 @@ const Picker = props => {
           }));
         });
     }
-
-    setState(state => ({
-      ...state,
-      loadingState: 'idle',
-    }));
   }
 
   const resetSelection = () => {
@@ -109,7 +106,11 @@ const Picker = props => {
       ...state,
       selectedCategory: null,
       items: state.personalisationCategories,
+      cacheCleared: true,
     }));
+    setTimeout(() => {
+      setState((state) => ({ ... state, cacheCleared: false }));
+    }, 1000);
   }
 
   const getCategory = (selected) => {
@@ -160,8 +161,9 @@ const Picker = props => {
           <ActionButton aria-label="Settings" isQuiet onPress={toggleSettings}>
             <Settings/>
           </ActionButton>
-          <ActionButton aria-label="Refresh" isQuiet onPress={clearCache} title="Clear cache">
-            <Refresh/>
+          <ActionButton isDisabled={state.cacheCleared} aria-label="Refresh" isQuiet onPress={clearCache} title="Clear cache">
+            {state.cacheCleared && <Checkmark/>}
+            {!state.cacheCleared && <Refresh/>}
           </ActionButton>
         </Flex>
       </View>

@@ -1,7 +1,6 @@
 const query = `query getCategoriesInCategory($id: String!) {
     categories(
         ids: [$id]
-        roles: ["show_in_menu"]
         subtree: { depth: 4, startLevel: 1 }
     ) {
         id

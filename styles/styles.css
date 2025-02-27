@@ -193,7 +193,7 @@ body:not(.appear) {
   visibility: hidden;
 }
 
-body:not(.appear) img:not(.dropin-image img) {
+body:not(.appear) img:not(.pdp-carousel img) {
     display: none;
 }
 

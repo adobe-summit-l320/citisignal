@@ -189,12 +189,12 @@ body {
   flex-direction: column;
 }
 
-/* body.appear {
-  display: block;
-} */
-
 body:not(.appear) {
   visibility: hidden;
+}
+
+body:not(.appear) img:not(.dropin-image img) {
+    display: none;
 }
 
 body.featured-pdp {

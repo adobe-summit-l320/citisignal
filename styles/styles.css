@@ -190,11 +190,7 @@ body {
 }
 
 body:not(.appear) {
-  visibility: hidden;
-}
-
-body:not(.appear) img:not(.pdp-carousel img) {
-    display: none;
+  display: none;
 }
 
 body.featured-pdp {

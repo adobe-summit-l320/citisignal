@@ -61,7 +61,6 @@ export default async function decorate(block) {
 
   // enable add-to-cart functionality
   if (enableAddToCart) {
-    // Attach the event listener to the add-to-cart button
     const addToCartButtons = block.querySelectorAll('.add-to-cart-btn');
 
     addToCartButtons.forEach((btn) => {

@@ -16,15 +16,15 @@ import {
   loadErrorPage,
 } from '../commerce.js';
 import { getHeaders } from '../configs.js';
-import { fetchPlaceholders } from '../aem.js';
+import { fetchPlaceholders, readBlockConfig } from '../aem.js';
+import { initializeDropin } from './index.js';
 
 export const IMAGES_SIZES = {
   width: 960,
   height: 1191,
 };
 
-export const initializePdpDropin = async (itemSku, itemOptionsUIDs) => {
-  // Set Fetch Endpoint (Service)
+await initializeDropin(async () => {
   setEndpoint(await commerceEndpointWithQueryParams());
 
   // Set Fetch Headers (Service)
@@ -33,9 +33,16 @@ export const initializePdpDropin = async (itemSku, itemOptionsUIDs) => {
     'Content-Type': 'application/json',
   });
 
-  let sku = itemSku ?? await getSkuFromUrl();
-  const optionsUIDs = itemOptionsUIDs ?? getOptionsUIDsFromUrl();
+  let sku = await getSkuFromUrl();
+  const optionsUIDs = getOptionsUIDsFromUrl();
   const placeholders = await fetchPlaceholders();
+
+  if (!sku) {
+    const block = document.querySelector('.product-details');
+    if (block) {
+      sku = readBlockConfig(block);
+    }
+  }
 
   let product;
   let labels;
@@ -81,7 +88,7 @@ export const initializePdpDropin = async (itemSku, itemOptionsUIDs) => {
     acdl: true,
     persistURLParams: true,
   });
-};
+})();
 
 async function preloadImageMiddleware(data) {
   const image = data?.images?.[0]?.url?.replace(/^https?:/, '');

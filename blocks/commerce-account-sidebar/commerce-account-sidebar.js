@@ -9,7 +9,7 @@ export default async function decorate(block) {
   const sidebarItems = Array.from(sidebarItemsConfig).map((item) => {
     const itemParams = Array.from(item.querySelectorAll('ol > li'));
     const itemConfig = {
-      itemTitle: item.childNodes[0]?.textContent.trim() || 'Default Title',
+      itemTitle: item.childNodes[0].nextSibling?.textContent.trim() || 'Default Title',
       itemSubtitle: itemParams[0]?.innerText || '',
       itemLink: itemParams[1]?.innerText || '#',
       itemIcon: itemParams[2]?.innerText || 'Placeholder',

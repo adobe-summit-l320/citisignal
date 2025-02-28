@@ -267,7 +267,7 @@
       },
       {
         "component": "richtext",
-        "name": "div:nth-child(1)>div:nth-child(2)",
+        "name": "div:nth-child(1)>div:custom-ue-ttext",
         "value": "",
         "label": "Text",
         "valueType": "string"

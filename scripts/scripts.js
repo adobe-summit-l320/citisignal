@@ -409,9 +409,9 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 
-  // Load scheduling sidekick extension
-  import('./scheduling/scheduling.js');
-  import('../tools/sidekick/aem-experimentation.js');
+  // Load scheduling sidekick extension (handled in loadPage now)
+  // import('./scheduling/scheduling.js'); - Targets old sidekick
+  // import('../tools/sidekick/aem-experimentation.js'); - Old Experimentation UI
 }
 
 /**
@@ -525,16 +525,40 @@ export function getConsent(topic) {
   return true;
 }
 
+async function loadSidekick() {
+  if (document.querySelector('aem-sidekick')) {
+    import('./sidekick.js');
+    return;
+  }
+
+  document.addEventListener('sidekick-ready', () => {
+    import('./sidekick.js');
+  });
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  loadSidekick();
 }
 
 loadPage();
 
+const { origin } = window.location;
+export const DA_ORIGIN = origin.includes('localhost')
+    ? 'http://localhost:6456'
+    : 'https://da.live';
+
 (async function loadDa() {
-  if (!new URL(window.location.href).searchParams.get('dapreview')) return;
-  // eslint-disable-next-line import/no-unresolved
-  import('https://da.live/scripts/dapreview.js').then(({ default: daPreview }) => daPreview(loadPage));
+  const { searchParams } = new URL(window.location.href);
+
+  /* eslint-disable import/no-unresolved */
+  if (searchParams.get('dapreview')) {
+    import(`${DA_ORIGIN}/scripts/dapreview.js`)
+      .then(({ default: daPreview }) => daPreview(loadPage));
+  }
+  if (searchParams.get('daexperiment')) {
+    import(`${DA_ORIGIN}/nx/public/plugins/exp/exp.js`);
+  }
 }());

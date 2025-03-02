@@ -22,8 +22,8 @@
       "titleI18n": {
         "en": "Experimentation"
       },
-      "environments": ["preview"],
-      "event": "aem-experimentation-sidekick"
+      "environments": ["dev", "preview"],
+      "event": "experimentation"
     }
   ]
 }

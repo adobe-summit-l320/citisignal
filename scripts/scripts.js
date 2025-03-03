@@ -281,6 +281,7 @@ async function loadEager(doc) {
     await runEager(document, { audiences: AUDIENCES }, pluginContext);
   }
 
+  console.log('🟢🟢🟢 loadEager');
   await initializeDropins();
 
   window.adobeDataLayer = window.adobeDataLayer || [];

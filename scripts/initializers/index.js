@@ -35,7 +35,7 @@ const persistCartDataInSession = (data) => {
 
 export default async function initializeDropins() {
   // Set auth headers on authenticated event
-  events.on('authenticated', setAuthHeaders);
+  events.on('authenticated', setAuthHeaders, { eager: true });
   // Cache cart data in session storage
   events.on('cart/data', persistCartDataInSession, { eager: true });
 

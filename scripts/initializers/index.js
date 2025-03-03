@@ -35,7 +35,6 @@ const persistCartDataInSession = (data) => {
 
 export default async function initializeDropins() {
   const init = async () => {
-    console.log('🟢🟢🟢 initializeDropins');
     // Set auth headers on authenticated event
     events.on('authenticated', setAuthHeaders);
     // Cache cart data in session storage
@@ -67,10 +66,7 @@ export default async function initializeDropins() {
   };
 
   // re-initialize on prerendering changes
-  document.addEventListener('prerenderingchange', () => {
-    console.log('🟢🟢🟢 prerenderingchange: initializeDropins()');
-    initializeDropins();
-  });
+  document.addEventListener('prerenderingchange', initializeDropins);
 
   return init();
 }

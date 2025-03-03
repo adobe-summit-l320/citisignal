@@ -6,7 +6,6 @@ import { fetchPlaceholders } from '../aem.js';
 import { getHeaders } from '../configs.js';
 
 await initializeDropin(async () => {
-  console.log('🟢🟢🟢 initializeDropin:auth', await getHeaders('auth'));
   setFetchGraphQlHeaders(await getHeaders('auth'));
 
   const labels = await fetchPlaceholders();

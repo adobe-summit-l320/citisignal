@@ -14,8 +14,9 @@
 }
 
 .product-list-page .ds-sdk-product-item__image img {
-  aspect-ratio: 185 / 230;
   object-fit: contain;
+  height: 200px;
+  width: auto;
 }
 
 .product-list-page .ds-sdk-sort-dropdown > button span {

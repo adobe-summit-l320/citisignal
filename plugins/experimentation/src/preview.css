@@ -29,7 +29,7 @@
   color: #eee;
   font-size: 1rem;
   font-weight: 600;
-  display: flex;
+  display: none; /* Do not show the pill any more. - DA EXP has arrived */
   flex-direction: column;
   gap: .5rem;
   inset: auto auto 1em;

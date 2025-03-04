@@ -25,11 +25,15 @@
 .teaser a.link-wrapper {
   display: flex;
   gap: 1rem;
-  width: auto;
+  width: 100%;
   max-width: 1238px;
   margin: 0 auto;
   color: inherit;
   padding: 1rem;
+}
+
+.teaser a.link-wrapper {
+  width: auto;
 }
 
 .teaser a.link-wrapper:hover {
@@ -164,6 +168,7 @@
   .teaser .wrapper,
   .teaser a.link-wrapper {
     flex-direction: column;
+    width: auto;
   }
 }
 
@@ -185,6 +190,7 @@
   position: relative;
   display: block;
   max-width: unset;
+  width: 100%;
 }
 
 .teaser.background-image > .wrapper div > picture {
@@ -225,6 +231,10 @@
 @media (width <= 900px) {
   .teaser.background-image {
     min-height: auto !important;
+  }
+
+  .teaser.background-image > .wrapper {
+    width: auto;
   }
 
   .teaser.background-image > .wrapper > div:not(.teaser-img-col) {

@@ -7,7 +7,11 @@ export default function decorate(block) {
 
     if (wrapTeaserWithLink && link) {
       wrapRowWithLink(row, link.href);
-      link.remove();
+      if (link.classList.contains('primary, secondary')) {
+        link.parentElement.parentElement.remove();
+      } else {
+        link.parentElement.remove();
+      }
     } else {
       row.classList.add('wrapper');
     }

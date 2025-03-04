@@ -218,6 +218,10 @@ header nav .nav-sections ul > li {
   font-weight: 700;
 }
 
+header nav .nav-sections ul > li a {
+  padding: 0 !important;
+}
+
 @media (width <=  1200px) {
   header nav .nav-sections {
     margin-left: 0px;
@@ -240,20 +244,6 @@ header nav .nav-sections ul > li > ul {
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
-}
-
-header nav .nav-sections ul > li > p > a {
-  padding: 1em 1.2em !important;
-  background-color: unset !important;
-  border-radius: unset !important;
-  color: #000 !important;
-}
-
-header nav .nav-sections ul > li > p > a.active,
-header nav .nav-sections ul > li > p > a:hover {
-  text-decoration: none !important;
-  background-color: var(--color-neutral-200) !important;
-  color: var(--color-brand-700) !important;
 }
 
 @media (width >= 900px) {
@@ -310,6 +300,20 @@ header nav .nav-sections ul > li > p > a:hover {
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
+  }
+
+  header nav .nav-sections ul > li > p > a {
+    padding: 1em 1.2em !important;
+    background-color: unset !important;
+    border-radius: unset !important;
+    color: #000 !important;
+  }
+  
+  header nav .nav-sections ul > li > p > a.active,
+  header nav .nav-sections ul > li > p > a:hover {
+    text-decoration: none !important;
+    background-color: var(--color-neutral-200) !important;
+    color: var(--color-brand-700) !important;
   }
 
   header

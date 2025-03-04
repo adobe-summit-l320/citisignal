@@ -62,13 +62,17 @@ main .hero-container > div {
 
 .hero > div:nth-child(2) > div,
 .hero > div:nth-child(3) > div {
-  padding: 2rem 1.25rem;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
 .hero div:nth-child(2) > div {
   width: fit-content;
-  max-width: 350px;
+  max-width: 360px;
+}
+
+.hero div:nth-child(2) > div a {
+  color: inherit;
 }
 
 .hero div:nth-child(3) > div {

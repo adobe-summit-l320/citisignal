@@ -8,18 +8,39 @@
   height: 100%;
 }
 
+.teaser > .wrapper {
+  box-sizing: border-box;
+}
+
 .teaser.align-right {
   display: flex;
   flex-direction: row-reverse;
 }
 
+.teaser p {
+  margin: 5px 0;
+}
+
 .teaser .wrapper,
 .teaser a.link-wrapper {
   display: flex;
+  gap: 1rem;
   width: 100%;
   max-width: 1238px;
   margin: 0 auto;
   color: inherit;
+  padding: 1rem;
+}
+
+.teaser a.link-wrapper {
+  width: auto;
+}
+
+.teaser a.link-wrapper:hover {
+  text-decoration: none;
+  color: inherit;
+  outline: 5px solid var(--primary-color);
+  border-radius: 20px;
 }
 
 .teaser-img-col {
@@ -32,6 +53,7 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: 0 0 0 2px transparent;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .teaser-img-col img {
@@ -40,7 +62,6 @@
   max-height: 290px;
   min-height: 210px;
   object-fit: contain;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -58,12 +79,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* gap: 1em; */
   border-radius: inherit;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   box-sizing: border-box;
-  padding: 3rem 5rem;
+  padding: 1rem;
   width: 100%;
   height: 100%;
 }
@@ -121,7 +141,7 @@
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     order: 1;
-    padding-top: 2rem;
+    padding: 1rem;
     flex: unset;
   }
 
@@ -137,17 +157,18 @@
   .teaser > div > div:not(.teaser-img-col),
   .teaser > a.link-wrapper > div:not(.teaser-img-col) {
     text-align: center;
-    padding: 3rem;
     align-items: center;
   }
 
   .teaser-img-col img {
     max-height: 155px;
+    min-height: unset;
   }
 
   .teaser .wrapper,
   .teaser a.link-wrapper {
     flex-direction: column;
+    width: auto;
   }
 }
 
@@ -169,6 +190,7 @@
   position: relative;
   display: block;
   max-width: unset;
+  width: 100%;
 }
 
 .teaser.background-image > .wrapper div > picture {
@@ -199,6 +221,11 @@
   height: 100%;
   max-width: 40%;
   margin-left: auto;
+  padding: 2rem 4rem;
+}
+
+.teaser.background-image > .wrapper {
+  padding: 0;
 }
 
 @media (width <= 900px) {
@@ -206,7 +233,15 @@
     min-height: auto !important;
   }
 
+  .teaser.background-image > .wrapper {
+    width: auto;
+  }
+
   .teaser.background-image > .wrapper > div:not(.teaser-img-col) {
     max-width: 100%;
+  }
+
+  .teaser.background-image > .wrapper .teaser-img-col {
+    padding: 0;
   }
 }

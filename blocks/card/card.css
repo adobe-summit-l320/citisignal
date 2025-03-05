@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 3rem;
   border-radius: 20px;
   background-color: var(--color-neutral-200); /* default */
 }

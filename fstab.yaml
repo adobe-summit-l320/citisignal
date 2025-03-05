@@ -1,0 +1,4 @@
+mountpoints:
+  /:
+    url: https://content.da.live/adobe-summit-l320/citisignal/
+    type: markup

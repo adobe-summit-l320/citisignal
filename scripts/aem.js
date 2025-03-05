@@ -218,8 +218,6 @@ function readBlockConfig(block) {
           }
         } else value = row.children[1].textContent;
         config[name] = value;
-        // TODO remove after testing
-        console.log('name = ' + name + ', config[name] = ' + config[name]);
       }
     }
   });

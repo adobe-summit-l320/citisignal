@@ -18,10 +18,7 @@ function checkAndRedirect(redirections) {
 
 function renderSignIn(element) {
   authRenderer.render(SignIn, {
-    onSuccessCallback: () => {
-      // reload
-      window.location.reload();
-    },
+    onSuccessCallback: () => {},
     formSize: 'small',
     routeForgotPassword: () => CUSTOMER_FORGOTPASSWORD_PATH,
   })(element);
@@ -92,14 +89,10 @@ export function renderAuthDropdown() {
 
   logoutButtonElement.addEventListener('click', async () => {
     await authApi.revokeCustomerToken();
-    const redirect = checkAndRedirect({
+    checkAndRedirect({
       '/customer': '/customer/login',
       '/order-details': '/',
     });
-
-    if (!redirect) {
-      window.location.reload();
-    }
   });
 
   renderSignIn(authDropinContainer);

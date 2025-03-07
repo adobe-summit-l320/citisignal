@@ -21,6 +21,11 @@
   margin: 5px 0;
 }
 
+.teaser a {
+  color: inherit;
+  font-size: inherit;
+}
+
 .teaser .wrapper,
 .teaser a.link-wrapper {
   display: flex;

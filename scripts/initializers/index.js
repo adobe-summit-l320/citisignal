@@ -55,6 +55,22 @@ export default async function initializeDropins() {
 
     // Initialize Global Drop-ins
     await import('./auth.js');
+
+    // 💥 HOT FIX: Validate authentication token is still valid
+    if (token) {
+      await authApi.fetchGraphQl('query VALIDATE_TOKEN{ customerCart { id } }')
+        .then((res) => {
+          const unauthenticated = !!res.errors?.find((error) => error.extensions?.category === 'graphql-authentication');
+          if (unauthenticated) throw new Error('Unauthenticated');
+        })
+        .catch(() => {
+          // remove auth token if it's invalid
+          document.cookie = 'auth_dropin_user_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          setAuthHeaders(false);
+          events.emit('authenticated', false);
+        });
+    }
+
     import('./cart.js');
 
     events.on('eds/lcp', async () => {

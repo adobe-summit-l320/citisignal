@@ -215,7 +215,8 @@ main .hero-container > div {
 
   /* temporary fix to improve LHS */
   main .section:first-of-type.hero-container .hero {
-    min-height: calc(100vh - 130px);
+    height: calc(100vh - 130px);
+    max-height: 800px;
   }
 
   /* Responsive Styles for Default Content Wrapper */

@@ -36,13 +36,6 @@
   width: auto;
 }
 
-.teaser a.link-wrapper:hover {
-  text-decoration: none;
-  color: inherit;
-  outline: 5px solid var(--primary-color);
-  border-radius: 20px;
-}
-
 .teaser-img-col {
   display: flex;
   justify-content: center;
@@ -244,4 +237,17 @@
   .teaser.background-image > .wrapper .teaser-img-col {
     padding: 0;
   }
+}
+
+/* teaser link */
+.teaser.teaser-link-true:has(> a):hover {
+  text-decoration: none;
+  color: inherit;
+  outline: 5px solid var(--primary-color);
+  border-radius: 20px;
+}
+
+.teaser.teaser-link-true > a:hover {
+  text-decoration: none;
+  color: inherit;
 }

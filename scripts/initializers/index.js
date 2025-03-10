@@ -14,6 +14,9 @@ import { getConfigValue, getCookie, getHeaders } from '../configs.js';
 
 export const getUserTokenCookie = () => getCookie('auth_dropin_user_token');
 
+// Event Bus Logger
+events.enableLogger(true);
+
 // Update auth headers
 const setAuthHeaders = (state) => {
   if (state) {
@@ -47,8 +50,6 @@ export default async function initializeDropins() {
     // emit authenticated event if token has changed
     events.emit('authenticated', !!token);
 
-    // Event Bus Logger
-    events.enableLogger(true);
     // Set Fetch Endpoint (Global)
     setEndpoint(await getConfigValue('commerce-core-endpoint'));
     setFetchGraphQlHeaders(await getHeaders('all'));

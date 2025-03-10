@@ -40,19 +40,22 @@ export default async function initializeDropins() {
   const init = async () => {
     // Set auth headers on authenticated event
     events.on('authenticated', setAuthHeaders);
+
     // Cache cart data in session storage
     events.on('cart/data', persistCartDataInSession, { eager: true });
 
     // on page load, check if user is authenticated
     const token = getUserTokenCookie();
-    // set auth headers
-    setAuthHeaders(!!token);
-    // emit authenticated event if token has changed
     events.emit('authenticated', !!token);
 
     // Set Fetch Endpoint (Global)
     setEndpoint(await getConfigValue('commerce-core-endpoint'));
+
+    // Set Fetch Headers
     setFetchGraphQlHeaders(await getHeaders('all'));
+
+    // Set Auth Headers
+    setAuthHeaders(!!token);
 
     // Initialize Global Drop-ins
     await import('./auth.js');
@@ -61,7 +64,7 @@ export default async function initializeDropins() {
     if (token) {
       await authApi.fetchGraphQl('query VALIDATE_TOKEN{ customerCart { id } }')
         .then((res) => {
-          const unauthenticated = !!res.errors?.find((error) => error.extensions?.category === 'graphql-authentication');
+          const unauthenticated = !!res.errors?.find((error) => error.extensions?.category === 'graphql-authentication' || error.extensions?.category === 'graphql-authorization');
           if (unauthenticated) throw new Error('Unauthenticated');
         })
         .catch(() => {

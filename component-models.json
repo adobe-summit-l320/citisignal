@@ -331,13 +331,6 @@
             "value": "false"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "div:nth-child(4)>div:nth-child(2)",
-        "label": "SKU",
-        "value": ""
       }
     ]
   }

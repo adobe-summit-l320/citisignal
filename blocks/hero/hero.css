@@ -123,15 +123,15 @@ main .hero-container > div {
 }
 
 .hero.block.overlay-display-on-hover .overlay {
-  display: none;
+  display: none !important;
 }
 
 .hero.block.overlay-display-on-hover:hover .overlay {
-  display: block;
+  display: flex !important;
 }
 
 .hero.block.overlay-display-never .overlay {
-  display: none;
+  display: none !important;
 }
 
 .hero.block.overlay-alignment-vertical-top .overlay {
